@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../stylesheets/register.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+</head>
+<body>
+    <div id="center">
+         <a href="/profile"><i class="ri-arrow-left-line"></i>  No Need To Update ?</a>
+         <form action="/update" method="post">
+            <div class="formelem">
+                <label for="username">User Name</label>
+                <input type="text" name="username" id="username" placeholder="User Name" value=<%= details.username %>>
+            </div>
+            <div class="formelem">
+                <label for="name">Full Name</label>
+                <input type="text" name="name" id="name" placeholder="Full Name" value= <%= details.name%>>
+            </div>
+            <div class="formelem">
+                <label for="Email">Email</label>
+                <input type="email" name="email" id="email" placeholder="Email" value=<%= details.email %>>
+            </div>
+            <div class="formelem">
+                <input type="submit" value="Update My Account">
+            </div>
+        </form>
+    </div>
+</body>
+</html>

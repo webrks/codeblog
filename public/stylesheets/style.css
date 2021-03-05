@@ -1,0 +1,256 @@
+*{
+  margin: 0%;
+  padding: 0%;
+  box-sizing: border-box;
+  font-family: "Montserrat";
+  text-decoration: none;
+}
+html,body{
+  width: 100%;
+  height: 100%;
+}
+#notify{
+  position: absolute;
+  display: flex;
+  padding: 0 30px;
+  height: 70px;
+  left: 50%;
+  transform: translate(-50%,0%);
+  background-color: rgb(59, 199, 113);
+  box-shadow: 0 5px 10px  rgb(94, 94, 94);
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius:10px;
+  color: #fff;
+  justify-content: center;
+  align-items: center;
+}
+#notify i{
+  cursor: pointer;
+  margin-left: 10px;
+  font-style: 12px;
+}
+#home{
+  width: 100%;
+  height: 70%;
+  background-size: cover;
+  background-position: center;
+  background-image: url(https://images.unsplash.com/photo-1471623378067-4bccc10be22d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1066&q=80);
+}
+nav{
+  width: 100%;
+  height: 70px;
+  align-items: center ;
+  display: flex;
+  padding: 0 50px;
+  justify-content: space-between;
+}
+nav>a{
+  color: black;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+nav #links a{
+  margin-left: 20px ;
+  text-decoration: none;
+  font-size: 12px;
+  color: black;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+nav #buttons a:nth-child(1){
+  color: black;
+  margin-right: 20px;
+  font-weight: 600;
+  font-size: 12px;
+  text-decoration: none;
+}
+nav #buttons a:nth-child(2){
+  color: white;
+  font-weight: 600;
+  padding: 8px 23px;
+  background-color: black;
+  font-size: 10px;
+  letter-spacing: 1px;
+  border-radius: 4px;
+  text-decoration: none;
+}
+#content{
+  padding: 0 50px;
+  margin-top: 160px;
+}
+#content h1{
+  
+   font-weight:300;
+   font-size: 38px;
+}
+#tdy{
+  font-weight: 900;
+  padding: 0 30px 9px 30px;
+  color: white;
+  background-color: black;
+}
+#content>a{
+  margin-top: 30px;
+  color: black;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+#content>a i{
+  margin-left: 20px;
+  font-size: 15px;
+}
+
+#menu{
+  position: relative;
+  width: 100%;
+  height: 230px;
+  background-color: #ffff;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  border-top-right-radius: 10px;
+  margin-top: 80px;
+}
+#extra{
+  display: flex;
+ 
+  top: -25%;
+  width: 40%;
+  position: absolute;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+  background-color: #ffffff;
+  height: 57.5px;
+  overflow: hidden;
+}
+
+.catg{
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 33.333%;
+  height: 100%;
+  background-color: rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
+}
+.catg i{
+  margin-right : 10px;
+
+}
+.catg h4 a{
+  color: white;
+}
+.active{
+  background-color: white;
+  color: black;
+}
+.catg h4{
+  font-size: 12px;
+  font-weight: 500;
+}
+.main{
+  display: flex;
+  padding: 30px;
+  width: 100%;
+  height: 100%;
+
+}
+.blgexmpl{
+  display: flex;
+  justify-content: space-between;
+  width: 33%;
+  height: 100%;
+  border-right: 2px dashed #e3e3e3;
+  padding: 20px;
+  
+}
+.content{
+  width: 80%;
+  height: 70px;
+  padding-right: 10px;
+}
+.blgexmpl:last-child{
+  border: none;
+}
+.blgexmpl .pic{
+  position: relative;
+  width: 70px;
+  height: 70px;
+  background-color: rgb(201, 201, 201);
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.blgexmpl .pic img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover; 
+}
+
+.blgexmpl .pic::after{
+  content: "";
+  position: absolute;
+  z-index: -9;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50% , -50%);
+  width: 70px;
+  height:70px;
+  background-color: rgb(17, 0, 255);
+  border-radius: 50%;
+ 
+}
+.content h3,h5{
+  margin-bottom: 7px;
+  font-weight: 400;
+}
+#logout{
+
+  background-color: red;
+  color: #fff;
+  
+}
+.content p{
+  font-size: 11px;
+  margin-top: 20px;
+  line-height: 19px;
+}
+.icons{
+  display: flex;
+}
+.content  i{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  border: 1px solid black;
+  margin-right: 20px;
+  margin-top: 20px;
+  font-size: 23px;
+  width: 40px;
+  height: 40px;
+  background-color: #e3e3e3;
+}
+.content .icons i:nth-child(1){
+  border-color: rgb(66, 248, 105);
+  color: rgb(66, 248, 105)
+}
+
+.content .icons i:nth-child(2){
+  border-color: rgb(53, 50, 255);
+  color: rgb(53,50,255)
+}
+
+.content .icons i:nth-child(1):hover{
+  box-shadow: 0px 2px 45px 0px rgb(66, 248, 105);
+  cursor: pointer;
+}
+
+.content .icons i:nth-child(2):hover{
+  box-shadow:0px 2px 45px 0px rgb(53, 50, 255);
+  cursor: pointer;
+}
+
+

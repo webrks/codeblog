@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="../stylesheets/style.css">
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+</head>
+<body>
+  <% if(messages.info){%>
+    <div id="notify">
+      <h4>Like Added !<h4>
+        <i id= "cross" class="ri-close-circle-line"></i>
+    </div>
+<%  }%>
+ 
+  <div id="home">
+    <nav>
+      <a href="/">Bloggy</a>
+      <div id="links">
+        <a href="/blogs">All Blogs by users</a>
+        <a href="/featured">Featured blog</a>
+      </div>
+      <% if(loggedIn){%>
+        <div id="buttons">
+          <a href="/profile">Profile</a>
+          <a id= "logout" href="/logout">Log ME Out </a>
+        </div>
+      <%} else {%>  
+        <div id="buttons">
+          <a href="/register">Register</a>
+          <a href="/login">Login </a>
+        </div>
+        <%}%>
+    </nav>
+    <div id="content">
+      <h1>Hey User , We've somethimg really <br> good for you, <span id="tdy"> today</span>  </h1>
+      <a href="#">Explore more <i class="ri-arrow-right-line"></i></a>
+      <div id="menu">
+        <div id="extra">
+          <div class="catg active">
+            <i class="ri-heart-line"></i> <h4> <a href="/"></a> Liked Post </h4>
+          </div>
+          <div class="catg">
+            <i class="ri-quill-pen-fill"></i><h4> <a href="/recent"> Recent </a></h4>
+          </div>
+          <div class="catg">
+            <i class="ri-shield-user-line"></i> <h4>User</h4> 
+          </div>
+        </div>
+        <div class="main">
+          <% if(results !== undefined){%>
+          <% results.forEach(function(result){%>
+            <div class="blgexmpl">
+              <div class="pic">
+                <img src=<%= result.author.profileImage%> alt="">
+              </div>
+              <div class="content">
+                <h3><%= result.post%></h3>
+                <h5><%= result.author.email%></h5>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ea nostrum voluptas eius et amet neque odio eligendi quae quis. Repellendus alias eum ratione architecto....</p>
+                <div class="icons">
+                  <a href= <%= '/like/'+result._id %>><i class="ri-user-heart-line"></i></a>
+                <i class="ri-user-add-line"></i>
+                </div>
+              </div>
+            </div>
+          <% })%>
+          <%} %>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+<script>
+  var cross = document.querySelector('#cross');
+  var notify = document.querySelector('#notify');
+  cross.addEventListener('click' , function(){
+    notify.style.display = 'none';  
+  })
+</script>
+</html>

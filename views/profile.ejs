@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="../stylesheets/profile.css">
+</head>
+<body>
+    
+    <div class="main">
+        <% if(messages.status){%>
+            <h3>Image Successfully Uploaded</h3>
+        <%}%>    
+        <a href="/"><i class="ri-arrow-left-line"></i>Go To Homepage</a>
+    </div>
+        <div class="mainsection">
+            <div class="left">
+                <div id ="prflimg" class="image">
+                <form enctype="multipart/form-data" id="imgform" action="/upload" method="POST">
+                    <input type="file" name="image">
+                </form>
+                <img src= <%= details.profileImage %> alt="">
+                <div class="overlayimg">
+                    <i class="ri-add-circle-line"></i>
+                </div>
+            </div>
+
+            <div class="text">
+                <h2><%= details.name%></h2>
+                 <h4><%= details.email%></h4>
+                 <div class="profilicons">
+                    <a href= <%= '/update/' +details.username%>> <i class="ri-pencil-line"></i>Edit Profile</a>
+                    
+                 </div>
+            </div>
+        </div>
+        <div class="right">
+            <h1>All Posts</h1>
+            <form action="/postblog" method="post">
+                <textarea name="post" id="postfield" placeholder="Write Your Post Here !" ></textarea>
+                <button type="submit">Post It </button>
+            </form>
+            <div class="posts">
+                <% if(details.posts.length < 1){ %>
+                    <h3>No Post Available</h3>
+                 <% } else { %>   
+                   <% details.posts.reverse().forEach(function(post){ %>
+                    <div class="post">
+                        <div class="top">
+                            <div class="smimg">
+                                 <img src= <%= details.profileImage%> alt="">
+                            </div>
+                            <h3><%= details.name%></h3>
+                        </div>
+                        <p><%= post.post %></p>
+                        <div class="icons">
+                            <i class="ri-clipboard-line"></i>
+                        </div>
+                    </div>  
+                   <% })%>
+                <% }%>
+            </div>
+        </div>
+    </div>
+    <script>
+        var prflimg = document.querySelector("#prflimg");
+        var imgform = document.querySelector("#imgform")
+        var inputimage = document.querySelector("#imgform input")
+
+
+        prflimg.addEventListener("click" , function(){
+            inputimage.click();
+        })    
+       inputimage.addEventListener('change' , function(){
+            imgform.submit();
+       })
+        </script>
+</body>
+</html>
